@@ -2,7 +2,7 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className=' mx-auto'>
+        <div className=' mx-auto mb-28'>
 
 
             <h1 className='text-6xl text-center my-12 '>Buy Amazing Toy Aircraft </h1>
