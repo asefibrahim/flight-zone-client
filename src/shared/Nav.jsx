@@ -1,7 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { Link, NavLink } from "react-router-dom";
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user);
+    const handleUserLogOut = () => {
+        logOut()
+
+    }
+
+    const navItems = <>
+        <NavLink to="/"
+            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
+        {user && <NavLink to="/allToys"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  All Toys</NavLink>}
+        {user && <NavLink to="/myToys"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  My Toys</NavLink>}
+
+        <NavLink to="/addToy"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Add a Toy</NavLink>
+
+        <NavLink to="/blogs"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} > Blogs</NavLink>
+
+
+
+
+
+    </>
 
     return (
         <div className="bg-zinc-800">
@@ -33,58 +61,27 @@ export const Nav = () => {
                         </span>
                     </a>
                     <ul class="flex items-center hidden space-x-8 lg:flex">
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Our product"
-                                title="Our product"
-                                class="font-medium tracking-wide text-slate-200
-                                transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Product
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Our product"
-                                title="Our product"
-                                class="font-medium tracking-wide text-slate-200 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Features
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="Product pricing"
-                                title="Product pricing"
-                                class="font-medium tracking-wide text-slate-200 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Pricing
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/"
-                                aria-label="About us"
-                                title="About us"
-                                class="font-medium tracking-wide text-slate-200 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                About us
-                            </a>
-                        </li>
+                        {navItems}
                     </ul>
                     <ul class="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/"
-                                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-slate-200 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Sign up
-                            </a>
+                            {
+                                user ? <li className="text-gray-300 mr-10 font-bold flex items-center gap-5 ">
+
+                                    <p title={user && user.displayName} className="text-3xl">
+                                        {user?.photoURL && <img className="w-12 rounded-full h-12" src={user?.photoURL
+                                        } /> || ''}
+
+                                    </p>
+                                    <p className=":bg-purple-800 border rounded-xl px-5 py-2 text-gray-300  transition hover:scale-110 hover:shadow-lg hover:text-purple-400 ">
+                                        <NavLink onClick={handleUserLogOut} >Sign Out</NavLink>
+                                    </p>
+
+
+                                </li> : <li className="mr-10 font-bold border rounded-xl px-5 py-2 text-gray-300  transition hover:scale-110 hover:shadow-lg ">
+                                    <NavLink className={({ isActive }) => (isActive ? 'text-purple-500' : 'default')} to='/login'>Login</NavLink>
+                                </li>
+                            }
                         </li>
                     </ul>
                     <div class="lg:hidden">
@@ -121,7 +118,7 @@ export const Nav = () => {
                                                 class="inline-flex items-center"
                                             >
                                                 <svg
-                                                    class="w-8 text-deep-purple-accent-400"
+                                                    class="w-8 text-deep-amber-accent-400"
                                                     viewBox="0 0 24 24"
                                                     strokeLinejoin="round"
                                                     strokeWidth="2"
@@ -163,7 +160,7 @@ export const Nav = () => {
                                                     href="/"
                                                     aria-label="Our product"
                                                     title="Our product"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-amber-accent-400"
                                                 >
                                                     Product
                                                 </a>
@@ -173,7 +170,7 @@ export const Nav = () => {
                                                     href="/"
                                                     aria-label="Our product"
                                                     title="Our product"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-amber-accent-400"
                                                 >
                                                     Features
                                                 </a>
@@ -183,7 +180,7 @@ export const Nav = () => {
                                                     href="/"
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-amber-accent-400"
                                                 >
                                                     Pricing
                                                 </a>
@@ -193,20 +190,13 @@ export const Nav = () => {
                                                     href="/"
                                                     aria-label="About us"
                                                     title="About us"
-                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-amber-accent-400"
                                                 >
                                                     About us
                                                 </a>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="/"
-                                                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Sign up"
-                                                >
-                                                    Sign up
-                                                </a>
+
                                             </li>
                                         </ul>
                                     </nav>

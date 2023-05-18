@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
@@ -7,7 +7,9 @@ const Login = () => {
     const { login, googleLogin } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
-
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from.pathname || '/'
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -22,6 +24,8 @@ const Login = () => {
                 setSuccess('You Have Successfully Logged in')
                 setSuccess('Logged in successfully')
                 form.reset()
+                navigate(from, { replace: true })
+
             })
             .catch(error => {
                 setError(error.message)
@@ -32,6 +36,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 setSuccess("You Have Successfully Logged in by Google")
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message)
