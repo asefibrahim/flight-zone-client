@@ -16,7 +16,7 @@ export const Nav = () => {
             className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
         {user && <NavLink to="/allToys"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  All Toys</NavLink>}
-        {user && <NavLink to="/myToys"
+        {user && <NavLink to="/myToy"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  My Toys</NavLink>}
 
         <NavLink to="/addToy"
