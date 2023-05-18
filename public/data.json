@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Super Flyer Helicopter",
+        "img": "https://as1.ftcdn.net/v2/jpg/02/86/87/32/1000_F_286873276_zMRmtCBtt9mTSdHouyHUAKtVHyNZoA5d.jpg",
+        "seller_name": "Toys R Us",
+        "seller_email": "sales@toysrus.com",
+        "subcategory": "Remote Control Helicopters",
+        "subcategory_id": "RC001",
+        "price": 39.99,
+        "ratings": 4.5,
+        "available_quantity": 10,
+        "description": "Experience the thrill of flying with the Super Flyer Helicopter! This remote control helicopter features a sleek design and easy-to-use controls. It's perfect for both beginners and experienced pilots. Fly high and have fun!"
+    },
+    {
+        "name": "Turbocopter X200",
+        "img": "https://www.horizonhobby.com/on/demandware.static/-/Sites-horizon-us-Library/default/dw9c274bea/merch/product/blh/BLH1200/BLH1200-410x300.jpg",
+        "seller_name": "Fun Toys Inc.",
+        "seller_email": "info@funtoys.com",
+        "subcategory": "Remote Control Helicopters",
+        "subcategory_id": "RC001",
+        "price": 49.99,
+        "ratings": 4.8,
+        "available_quantity": 5,
+        "description": "Get ready for high-speed aerial adventures with the Turbocopter X200! This RC drone is equipped with advanced features like altitude hold, 360-degree flips, and headless mode. It's a perfect choice for drone enthusiasts and thrill-seekers."
+    },
+    {
+        "name": "Rescue Copter 5000",
+        "img": "https://www.horizonhobby.com/on/demandware.static/-/Sites-horizon-us-Library/default/dwa15f343e/merch/product/blh/BLH05850/BLH05850-410x300-03.jpg",
+        "seller_name": "Kids' Play World",
+        "seller_email": "sales@kidsplayworld.com",
+        "subcategory": "Remote Control Helicopters",
+        "subcategory_id": "RC001",
+        "price": 29.99,
+        "ratings": 4.2,
+        "available_quantity": 8,
+        "description": "Be a hero with the Rescue Copter 5000! This toy helicopter is designed for exciting rescue missions. It comes with a working winch and searchlight, making it perfect for imaginative play. Get ready to save the day!"
+    },
+    {
+        "name": "Sky Master X10",
+        "img": "https://images.unsplash.com/photo-1553165558-424ffa9c4303?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "seller_name": "Drone Zone",
+        "seller_email": "sales@dronezone.com",
+        "subcategory": "RC Drones",
+        "subcategory_id": "DR001",
+        "price": 79.99,
+        "ratings": 4.7,
+        "available_quantity": 12,
+        "description": "Experience the thrill of aerial exploration with the Sky Master X10 RC Drone! This high-performance drone features GPS positioning, intelligent flight modes, and a high-definition camera for capturing stunning aerial footage. Take your piloting skills to new heights!"
+    },
+    {
+        "name": "Stealth Tracker S200",
+        "img": "https://images.unsplash.com/photo-1456615913800-c33540eac399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+        "seller_name": "Tech Drones",
+        "seller_email": "info@techdrones.com",
+        "subcategory": "RC Drones",
+        "subcategory_id": "DR001",
+        "price": 99.99,
+        "ratings": 4.9,
+        "available_quantity": 7,
+        "description": "Unleash your inner spy with the Stealth Tracker S200 RC Drone! This advanced drone is equipped with stealth mode, real-time video transmission, and gesture control. It's perfect for aerial surveillance and capturing secret missions."
+    },
+    {
+        "name": "Nano Racer Z300",
+        "img": "https://images.unsplash.com/photo-1602526214925-4fedda6a53df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "seller_name": "Fun Tech Toys",
+        "seller_email": "sales@funtechtoys.com",
+        "subcategory": "RC Drones",
+        "subcategory_id": "DR001",
+        "price": 49.99,
+        "ratings": 4.4,
+        "available_quantity": 9,
+        "description": "Experience fast-paced racing action with the Nano Racer Z300 RC Drone! This mini racing drone is designed for agility and speed. It comes with built-in LED lights for night racing and a user-friendly controller. Get ready to dominate the race!"
+    },
+    {
+        "name": "Sky Rider X300",
+        "img": "https://d24rugpqfx7kpb.cloudfront.net/HZ/62C0549142DF1B9A367C7C54BFDC4B6E/AH008Pdefault.jpg/80ab031e74508e1adb254b4603590add.webp",
+        "seller_name": "Aero Adventures",
+        "seller_email": "sales@aeroadventures.com",
+        "subcategory": "RC Airplanes",
+        "subcategory_id": "AP001",
+        "price": 89.99,
+        "ratings": 4.6,
+        "available_quantity": 15,
+        "description": "Take to the skies with the Sky Rider X300 RC Airplane! This remote control airplane features a sleek design, easy controls, and a durable construction. It's perfect for beginners and experienced pilots alike. Get ready for thrilling aerial maneuvers!"
+    },
+    {
+        "name": "Swift Wings S500",
+        "img": "https://d24rugpqfx7kpb.cloudfront.net/HZ/8FA695D569DEF2AAB3832D38E92A1285/AH009P1500x1000.jpg/80ab031e74508e1adb254b4603590add.webp",
+        "seller_name": "Fly High Toys",
+        "seller_email": "info@flyhightoys.com",
+        "subcategory": "RC Airplanes",
+        "subcategory_id": "AP001",
+        "price": 109.99,
+        "ratings": 4.8,
+        "available_quantity": 8,
+        "description": "Experience the excitement of high-speed flying with the Swift Wings S500 RC Airplane! This aerobatic airplane is built for speed and agility, with powerful motors and responsive controls. It's perfect for adrenaline junkies and aerial enthusiasts."
+    },
+    {
+        "name": "Mini Aviator A200",
+        "img": "https://d24rugpqfx7kpb.cloudfront.net/HZ/B558008AAB96E309E31F22F708F90365/ah016pfgallery1.jpg/80ab031e74508e1adb254b4603590add.webp",
+        "seller_name": "Toyland Adventures",
+        "seller_email": "sales@toylandadventures.com",
+        "subcategory": "RC Airplanes",
+        "subcategory_id": "AP001",
+        "price": 39.99,
+        "ratings": 4.3,
+        "available_quantity": 12,
+        "description": "Take flight with the Mini Aviator A200 RC Airplane! This compact and lightweight airplane is perfect for indoor and outdoor flying. It features a stable flight performance and easy maneuverability. Get ready for hours of airborne fun!"
+    }
+]
