@@ -1,8 +1,11 @@
 import React from 'react';
 import Banner from './Banner';
 import Gallery from './Gallery';
+import TabSection from './TabSection/MianSection';
+import SectionOne from './ExtraSections/SectionOne';
+import SectionTwo from './ExtraSections/SectionTwo';
 
-import TabSection from './TabSection';
+
 
 const MainHome = () => {
     return (
@@ -10,6 +13,8 @@ const MainHome = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <TabSection></TabSection>
+            <SectionOne></SectionOne>
+            <SectionTwo></SectionTwo>
 
         </div>
     );
