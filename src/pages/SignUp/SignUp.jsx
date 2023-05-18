@@ -5,6 +5,8 @@ import { AuthContext } from '../../provider/AuthProvider';
 const SignUp = () => {
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+
+    const { createUser } = useContext(AuthContext)
     const handleSubmit = (e) => {
         e.preventDefault()
         setError('')
@@ -24,6 +26,21 @@ const SignUp = () => {
             setError('Password Should Be At Least Six Characters long')
             return
         }
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+
+                const loggedUser = result.user
+                loggedUser.photoURL = imageUrl
+                loggedUser.displayName = name
+                setSuccess("Account has been created Successfully")
+                form.reset()
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+
+
 
     }
 
@@ -100,7 +117,8 @@ const SignUp = () => {
                                 <p className='text-green-400 text-lg font-semibold pt-3 text-center' >{success}</p>
 
                                 <div class="mt-10">
-                                    <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-gray-300 capitalize transition-colors duration-300 transform bg-purple-800 rounded-lg hover:bg-slate-800 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                                    <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-gray-300 capitalize transition-colors duration-300 transform bg-amber-700
+                                    rounded-lg hover:bg-slate-800 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                         Sign Up
                                     </button>
 
