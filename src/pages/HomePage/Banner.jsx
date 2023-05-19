@@ -4,9 +4,9 @@ const Banner = () => {
     return (
         <div className="carousel w-full h-[600px]">
             <div id="slide1" className="carousel-item relative w-full">
-                <img src="https://images.unsplash.com/photo-1557002606-2df64438a438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" className="w-full " />
+                <img src="https://images.unsplash.com/photo-1679136578198-539e835445be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" className="w-full " />
 
-                <div className="absolute flex items-center  w-full  bg-gradient-to-t from-[#312f2f] to-[rgba(21,21,21,0.5)] h-full text-center ">
+                <div className="absolute flex items-center  w-full  bg-gradient-to-t from-[#1d1c1c] to-[rgba(21,21,21,0.5)] h-full text-center ">
                     <div className='space-y-9 w-4/5 mx-auto mb-48  '>
                         <h1 className='text-gray-200 text-5xl font-bold '>Affordable price for car servicing</h1>
                         <p className='text-gray-200'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolorem voluptatem illum, mollitia obcaecati quas maiores. Adipisci saepe eius ex, asperiores, qui voluptatibus ut earum, consequuntur excepturi neque officia totam!</p>
