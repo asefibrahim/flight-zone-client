@@ -1,62 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../provider/AuthProvider';
-import MyToyRow from './MyToyRow';
-import Swal from 'sweetalert2';
-import UpdateModal from './UpdateModal';
+import React, { useEffect, useState } from 'react';
+import AllToyRow from './AllToyRow';
 
-const MyToy = () => {
-    const [products, setProducts] = useState([])
-    const { user } = useContext(AuthContext)
+const AllToy = () => {
+    const [allProducts, setAllProducts] = useState([])
+
     useEffect(() => {
-        fetch(`http://localhost:5000/addedToys?email=${user?.email}`)
+        fetch('http://localhost:5000/addedToys')
             .then(res => res.json())
             .then(data => {
-                setProducts(data);
+                setAllProducts(data)
             })
     }, [])
-    console.log(products);
-
-    // delete operation
-
-    const handleDeleteItem = (id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                fetch(` http://localhost:5000/addedToys/${id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        if (data.deletedCount > 0) {
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                            const remaining = products.filter(c => c._id !== id)
-                            setProducts(remaining)
-                        };
-
-                    })
-            }
-        })
-
-
-
-    }
-
-
-
-
 
 
     return (
@@ -78,13 +32,13 @@ const MyToy = () => {
                                             <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 <div class="flex items-center gap-x-3">
 
-                                                    <span>Product Name</span>
+                                                    <span>Seller Name</span>
                                                 </div>
                                             </th>
 
                                             <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 <button class="flex items-center gap-x-2">
-                                                    <span>Category</span>
+                                                    <span>Toy Name</span>
 
                                                     <svg class="h-3" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M2.13347 0.0999756H2.98516L5.01902 4.79058H3.86226L3.45549 3.79907H1.63772L1.24366 4.79058H0.0996094L2.13347 0.0999756ZM2.54025 1.46012L1.96822 2.92196H3.11227L2.54025 1.46012Z" fill="currentColor" stroke="currentColor" stroke-width="0.1" />
@@ -96,7 +50,7 @@ const MyToy = () => {
 
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 <button class="flex items-center gap-x-2">
-                                                    <span>Price</span>
+                                                    <span>Sub-category</span>
 
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
@@ -106,7 +60,7 @@ const MyToy = () => {
 
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Available Quantity</th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">Ratings</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">Price</th>
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">More</th>
 
                                             <th scope="col" class="relative py-3.5 px-4">
@@ -116,22 +70,9 @@ const MyToy = () => {
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                         {
-                                            products.map((product) => {
-                                                return <>
 
-                                                    <MyToyRow
+                                            <AllToyRow></AllToyRow>
 
-                                                        handleDeleteItem={handleDeleteItem}
-                                                        product={product} key={product._id}></MyToyRow>
-
-                                                    <UpdateModal
-                                                        products={products}
-                                                        setProducts={setProducts}
-                                                        product={product}></UpdateModal>
-                                                </>
-
-
-                                            })
                                         }
 
 
@@ -153,4 +94,4 @@ const MyToy = () => {
     );
 };
 
-export default MyToy;
+export default AllToy;

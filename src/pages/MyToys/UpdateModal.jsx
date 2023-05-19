@@ -1,9 +1,55 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
-const UpdateModal = ({ product, handleUpdate }) => {
+const UpdateModal = ({ product, products, setProducts, }) => {
 
     console.log(product);
     const { _id, toyImage, price, quantity, ratings, category, toyName } = product
+
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const toyName = form.name.value
+        const price = form.price.value
+        const quantity = form.quantity.value
+        const description = form.description.value
+        const updateInfo = {
+            toyName, price, quantity, description
+        }
+        console.log(updateInfo);
+        fetch(` http://localhost:5000/addedToys/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    const remaining = products.filter(pd => pd._id !== _id)
+                    console.log(remaining);
+                    const updatedOne = products.find(pd => pd._id === _id)
+                    console.log(updatedOne);
+                    updatedOne.toyName = toyName
+                    updatedOne.price = price
+                    updatedOne.quantity = quantity
+                    updatedOne.description = description
+                    const setUpdatedData = [...remaining, updatedOne]
+                    setProducts(setUpdatedData)
+                }
+
+            })
+
+    }
+
 
 
     return (

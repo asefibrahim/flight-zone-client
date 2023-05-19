@@ -14,7 +14,7 @@ export const Nav = () => {
     const navItems = <>
         <NavLink to="/"
             className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
-        {user && <NavLink to="/allToys"
+        {user && <NavLink to="/allToy"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  All Toys</NavLink>}
         {user && <NavLink to="/myToy"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  My Toys</NavLink>}

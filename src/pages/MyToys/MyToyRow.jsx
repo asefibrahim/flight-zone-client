@@ -2,10 +2,10 @@ import React from 'react';
 import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
-import UpdateModal from './UpdateModal';
 
 
-const MyToyRow = ({ product, handleDeleteItem, handleUpdate }) => {
+
+const MyToyRow = ({ product, handleDeleteItem }) => {
 
     const { _id, toyImage, price, quantity, ratings, category, toyName } = product
 
