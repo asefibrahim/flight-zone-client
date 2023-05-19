@@ -13,6 +13,7 @@ const AllToy = () => {
     }, [])
 
 
+
     return (
         <div>
             <section class="container px-4 mx-auto">
@@ -71,7 +72,7 @@ const AllToy = () => {
                                     <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                         {
 
-                                            <AllToyRow></AllToyRow>
+                                            allProducts.map(singleProduct => <AllToyRow singleProduct={singleProduct}></AllToyRow>)
 
                                         }
 
