@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import MyToyRow from './MyToyRow';
 import Swal from 'sweetalert2';
+import UpdateModal from './UpdateModal';
 
 const MyToy = () => {
     const [products, setProducts] = useState([])
@@ -52,6 +53,25 @@ const MyToy = () => {
 
 
     }
+
+
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value
+        const price = form.price.value
+        const quantity = form.quantity.value
+
+        const dataInfo = {
+            name, price, quantity
+        }
+        console.log(dataInfo);
+
+
+    }
+
+
+
     return (
         <div>
             <section class="container px-4 mx-auto">
@@ -109,10 +129,25 @@ const MyToy = () => {
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                         {
-                                            products.map(product => <MyToyRow
-                                                handleDeleteItem={handleDeleteItem}
-                                                product={product} key={product._id}></MyToyRow>)
+                                            products.map((product) => {
+                                                return <>
+
+                                                    <MyToyRow
+                                                        handleUpdate={handleUpdate}
+                                                        handleDeleteItem={handleDeleteItem}
+                                                        product={product} key={product._id}></MyToyRow>
+
+                                                    <UpdateModal
+                                                        handleUpdate={handleUpdate}
+                                                        product={product}></UpdateModal>
+                                                </>
+
+
+                                            })
                                         }
+
+
+
 
 
                                     </tbody>
@@ -124,6 +159,8 @@ const MyToy = () => {
 
 
             </section>
+
+
         </div>
     );
 };
