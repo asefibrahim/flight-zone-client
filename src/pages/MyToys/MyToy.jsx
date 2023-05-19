@@ -3,8 +3,10 @@ import { AuthContext } from '../../provider/AuthProvider';
 import MyToyRow from './MyToyRow';
 import Swal from 'sweetalert2';
 import UpdateModal from './UpdateModal';
+import useTitle from '../../hooks/useTitle';
 
 const MyToy = () => {
+    useTitle('myToy')
     const [products, setProducts] = useState([])
     const { user } = useContext(AuthContext)
     useEffect(() => {

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import AllToyRow from './AllToyRow';
+import useTitle from '../../hooks/useTitle';
 
 const AllToy = () => {
+    useTitle('allToys')
     const [allProducts, setAllProducts] = useState([])
 
     useEffect(() => {
