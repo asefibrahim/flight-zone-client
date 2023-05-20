@@ -27,8 +27,26 @@ const AllToy = () => {
 
     }
 
+
+
+
+
     return (
         <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <div className="max-w-sm px-4 flex items-center w-96 mx-auto mt-12 gap-4">
                 <div className="relative">

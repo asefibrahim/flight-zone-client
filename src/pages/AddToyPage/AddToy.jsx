@@ -24,12 +24,17 @@ const AddToy = () => {
             toyImage, toyName, price, ratings, sellerName, category, quantity, sellerEmail, description
         }
         console.log(totalInfo);
+        totalInfo.createdAt = new Date()
         fetch('http://localhost:5000/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(totalInfo)
+
+            body: JSON.stringify(totalInfo),
+
+
+
 
         })
             .then(res => res.json())

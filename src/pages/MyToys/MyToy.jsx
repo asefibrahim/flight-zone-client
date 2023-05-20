@@ -4,18 +4,22 @@ import MyToyRow from './MyToyRow';
 import Swal from 'sweetalert2';
 import UpdateModal from './UpdateModal';
 import useTitle from '../../hooks/useTitle';
+import { FaUser, FaAngleDoubleDown } from 'react-icons/fa';
+
 
 const MyToy = () => {
     useTitle('myToy')
+    const [activeTab, setActiveTab] = useState('uyhg');
+
     const [products, setProducts] = useState([])
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/addedToys?email=${user?.email}`)
+        fetch(`http://localhost:5000/addedToys?email=${user?.email}&text=${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
             })
-    }, [])
+    }, [activeTab])
     console.log(products);
 
     // delete operation
@@ -57,17 +61,50 @@ const MyToy = () => {
     }
 
 
-
-
+    console.log(activeTab);
+    const handleChange = (e) => {
+        setActiveTab(e.target.value)
+    }
 
 
     return (
         <div>
-            <section class="container px-4 mx-auto">
-                <div class="flex items-center gap-x-3">
-                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">Team members</h2>
 
-                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">100 users</span>
+
+
+            {/* <select onChange={handleChange} class="block w-48 mx-auto mt-12 appearance-none  bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name='select'>
+                <option>Sort by Ascending </option>
+                <option>Sort by  Descending</option>
+
+            </select> */}
+
+            <div className='text-center mt-5'>
+                <div className="dropdown ">
+                    <label tabIndex={0} className="btn m-1 ">Sort By</label>
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-200 rounded-box w-52">
+                        <li onClick={() => setActiveTab('Ascending')}><a>Ascending</a></li>
+                        <li onClick={() => setActiveTab('Descending')}><a>Descending</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <section class="container px-4 mx-auto">
+                <div class="flex items-center gap-x-3 ">
+                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">Total Toys</h2>
+
+                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400"> {products.length}</span>
                 </div>
 
                 <div class="flex flex-col mt-6">
