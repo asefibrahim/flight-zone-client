@@ -28,14 +28,14 @@ const TabSection = () => {
         <div className='mb-12  mt-12'>
 
             <Tabs>
-                <TabList>
-                    <Tab ><span className='font-bold'>Rc Helicopter</span></Tab>
+                <TabList className='text-center'>
+                    <Tab  ><span className='font-bold'>Rc Helicopter</span></Tab>
                     <Tab ><span className='font-bold'>Rc Drone</span></Tab>
                     <Tab ><span className='font-bold'>Rc Aircraft</span></Tab>
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-12'>
+                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-20'>
                         {
                             helicopters.map(helicopter => <Helicopter helicopter={helicopter}></Helicopter>)
                         }

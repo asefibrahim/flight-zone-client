@@ -33,7 +33,7 @@ const SectionOne = () => {
                                         <img
                                             src="https://squadrone.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/12/inner_product_02.png"
                                             alt=""
-                                            class="object-cover w-full rounded hover:shadow-xl"
+                                            class="object-cover w-full rounded "
                                         />
 
                                         <div class="mt-3">
@@ -53,7 +53,7 @@ const SectionOne = () => {
                                         <img
                                             src="https://squadrone.bold-themes.com/main-demo/wp-content/uploads/sites/2/2017/12/inner_product_01.png"
                                             alt=""
-                                            class="w-full rounded hover:shadow-xl h-80"
+                                            class="w-full rounded  h-80"
                                         />
 
                                         <div class="mt-3">

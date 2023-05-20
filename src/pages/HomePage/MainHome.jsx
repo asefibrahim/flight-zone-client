@@ -5,6 +5,7 @@ import TabSection from './TabSection/MianSection';
 import SectionOne from './ExtraSections/SectionOne';
 import SectionTwo from './ExtraSections/SectionTwo';
 import useTitle from '../../hooks/useTitle';
+import ExtraThree from './ExtraSections/Extrathree';
 
 
 
@@ -16,6 +17,7 @@ const MainHome = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <TabSection></TabSection>
+            <ExtraThree></ExtraThree>
             <SectionOne></SectionOne>
             <SectionTwo></SectionTwo>
 

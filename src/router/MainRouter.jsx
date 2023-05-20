@@ -12,11 +12,14 @@ import PrivateRoute from "./PrivateRoute";
 import AllToy from "../pages/AllToyPage/AllToy";
 import SingleToy from "../pages/SingleToyDetails/SingleToy";
 import Blogs from "../pages/BlogsPage/Blogs";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import SingleToyByCat from "../pages/HomePage/TabSection/SingleToyByCat";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayOut></MainLayOut>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -47,6 +50,12 @@ const router = createBrowserRouter([
                 element: <SingleToy></SingleToy>,
                 loader: ({ params }) => fetch(`https://rc-flight-zone-server.vercel.app/addedToys/${params.id}`)
             },
+            {
+                path: '/categories/:id',
+                element: <SingleToyByCat></SingleToyByCat>,
+                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+            },
+
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>

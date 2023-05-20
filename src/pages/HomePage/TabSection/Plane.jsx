@@ -2,10 +2,11 @@ import React from 'react';
 import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
+import { Link } from 'react-router-dom';
 
 const Plane = ({ plane }) => {
 
-    const { img, name, price, ratings } = plane
+    const { _id, img, name, price, ratings } = plane
 
 
 
@@ -25,7 +26,9 @@ const Plane = ({ plane }) => {
 
                 <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
                     <div class=" w-[150px] text-white flex items-center gap-3"> <p className='font-semibold  '>     {ratings}</p> <p><Rating value={ratings} readOnly></Rating></p></div>
-                    <button class="px-2 py-1 text-xs font-semibold uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
+                    <Link to={`/categories/${_id}`}>
+                        <button class="px-2 py-1 text-xs font-semibold uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>
