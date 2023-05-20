@@ -1,16 +1,19 @@
 import React from 'react';
-
+import { FaBeer, FaArrowsAlt } from 'react-icons/fa';
 const ExtraThree = () => {
     return (
         <div>
             <h1 className='text-center w-3/4 mx-auto my-28 text-5xl'>Drones Use Cutting Edge Technologies &
-                Products To Get The Best Results</h1>
+                <p className='mt-3'>  Products To Get The Best Results</p></h1>
             <div className='grid md:grid-cols-4 gap-5'>
 
 
                 <div>
                     <div className='text-right'>
-                        <h1 className='text-2xl font-semibold text-gray-700 mb-4  '>AERIAL PHOTOGRAPHY</h1>
+
+
+                        <h1 className='text-2xl font-semibold text-gray-700 mb-4 '>ARIAL PHOTOGRAPHY</h1>
+
 
                         <p className='text-gray-700 '>A drone is an unmanned aerial vehicle (UAV) that is fitted with various equipment including photography and videography leverage agile frameworks.</p>
                     </div>
