@@ -17,7 +17,7 @@ const UpdateModal = ({ product, products, setProducts, }) => {
             toyName, price, quantity, description
         }
         console.log(updateInfo);
-        fetch(` http://localhost:5000/addedToys/${_id}`, {
+        fetch(` https://rc-flight-zone-server.vercel.app/addedToys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

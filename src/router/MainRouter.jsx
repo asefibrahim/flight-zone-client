@@ -11,6 +11,7 @@ import MyToy from "../pages/MyToys/MyToy";
 import PrivateRoute from "./PrivateRoute";
 import AllToy from "../pages/AllToyPage/AllToy";
 import SingleToy from "../pages/SingleToyDetails/SingleToy";
+import Blogs from "../pages/BlogsPage/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,11 @@ const router = createBrowserRouter([
             {
                 path: '/allToy/:id',
                 element: <SingleToy></SingleToy>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addedToys/${params.id}`)
+                loader: ({ params }) => fetch(`https://rc-flight-zone-server.vercel.app/addedToys/${params.id}`)
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             }
         ]
     },

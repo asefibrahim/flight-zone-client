@@ -25,7 +25,7 @@ const AddToy = () => {
         }
         console.log(totalInfo);
         totalInfo.createdAt = new Date()
-        fetch('http://localhost:5000/addToy', {
+        fetch('https://rc-flight-zone-server.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

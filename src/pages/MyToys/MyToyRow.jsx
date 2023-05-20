@@ -42,7 +42,7 @@ const MyToyRow = ({ product, handleDeleteItem }) => {
                 <div class="flex items-center gap-x-2 ">
 
                     <p class="px-3 py-1 text-xs text-pink-500 rounded-full dark:bg-gray-800 bg-pink-100/60">
-                        <div class=" w-[150px] text-white flex items-center gap-3"> <p className='font-semibold text-black '>     </p> <p><Rating value={ratings} readOnly></Rating></p></div>
+                        <div class=" w-[100px] text-white flex items-center gap-3"> <p className='font-semibold text-black '>     </p> <p><Rating value={ratings} readOnly></Rating></p></div>
                     </p>
                 </div>
             </td >

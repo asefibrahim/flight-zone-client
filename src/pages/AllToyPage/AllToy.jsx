@@ -2,15 +2,17 @@
 import { useEffect, useState } from 'react';
 import AllToyRow from './AllToyRow';
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const AllToy = () => {
 
+    useTitle('allToys')
     const [search, setSearch] = useState(null)
 
     const [allProducts, setAllProducts] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/addedToys')
+        fetch('https://rc-flight-zone-server.vercel.app/addedToys')
             .then(res => res.json())
             .then(data => {
                 setAllProducts(data)
@@ -19,7 +21,7 @@ const AllToy = () => {
 
     const handSearch = () => {
 
-        fetch(`http://localhost:5000/searchByText/${search}`)
+        fetch(`https://rc-flight-zone-server.vercel.app/searchByText/${search}`)
             .then(res => res.json())
             .then(data => {
                 setAllProducts(data)
@@ -80,9 +82,9 @@ const AllToy = () => {
 
             <section class="container px-4 mx-auto">
                 <div class="flex items-center gap-x-3">
-                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">Team members</h2>
+                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">Total Toys</h2>
 
-                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">100 users</span>
+                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">{allProducts.length}</span>
                 </div>
 
                 <div class="flex flex-col mt-6">

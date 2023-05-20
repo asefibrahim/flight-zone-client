@@ -14,7 +14,7 @@ const MyToy = () => {
     const [products, setProducts] = useState([])
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/addedToys?email=${user?.email}&text=${activeTab}`)
+        fetch(`https://rc-flight-zone-server.vercel.app/addedToys?email=${user?.email}&text=${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -36,7 +36,7 @@ const MyToy = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(` http://localhost:5000/addedToys/${id}`, {
+                fetch(` https://rc-flight-zone-server.vercel.app/addedToys/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
