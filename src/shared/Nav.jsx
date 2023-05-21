@@ -14,17 +14,16 @@ export const Nav = () => {
     const navItems = <>
         <NavLink to="/"
             className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
-        {user && <NavLink to="/allToy"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  All Toys</NavLink>}
+        <NavLink to="/allToy"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  All Toys</NavLink>
         {user && <NavLink to="/myToy"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  My Toys</NavLink>}
+        {user && <NavLink to="/addToy"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Add Toy</NavLink>}
 
-        <NavLink to="/addToy"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Add a Toy</NavLink>
 
         <NavLink to="/blogs"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} > Blogs</NavLink>
-
 
 
 

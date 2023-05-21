@@ -13,11 +13,11 @@ const Drone = ({ drone }) => {
 
     return (
         <div>
-            <div class="max-w-xl overflow-hidden bg-white rounded-lg shadow-2xl dark:bg-gray-800">
+            <div class="max-w-xl overflow-hidden bg-black rounded-lg shadow-2xl dark:bg-gray-800">
                 <div class="px-4 py-2">
-                    <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">{name}</h1>
-                    <p class="mt-1 font-bold text-lg
-                    text-gray-600 dark:text-gray-400">
+                    <h1 class="text-xl font-bold text-orange-100 uppercase dark:text-white">{name}</h1>
+                    <p class="mt-1 font-bold 
+                    text-orange-100 dark:text-gray-400">
                         Price : $ {price}
                     </p>
                 </div>

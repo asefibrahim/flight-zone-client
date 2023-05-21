@@ -47,12 +47,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allToy/:id',
-                element: <SingleToy></SingleToy>,
+                element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://rc-flight-zone-server.vercel.app/addedToys/${params.id}`)
             },
             {
                 path: '/categories/:id',
-                element: <SingleToyByCat></SingleToyByCat>,
+                element: <PrivateRoute><SingleToyByCat></SingleToyByCat></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://rc-flight-zone-server.vercel.app/categories/${params.id}`)
             },
 

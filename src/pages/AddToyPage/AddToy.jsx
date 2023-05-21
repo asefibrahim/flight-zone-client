@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
@@ -40,6 +41,12 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Toy Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
             })
 
     }
@@ -55,7 +62,7 @@ const AddToy = () => {
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             Toy  Name
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Jane" name='name' />
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Name" name='name' />
 
                     </div>
                     <div class="w-full md:w-1/2 px-3">
@@ -71,14 +78,14 @@ const AddToy = () => {
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             Price
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Jane" name='price' />
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="number" placeholder="Amount in $ Dollar" name='price' />
 
                     </div>
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             Ratings
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Image Url" name='ratings' />
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="number" placeholder="Ratings" name='ratings' />
                     </div>
                 </div>
 
@@ -87,7 +94,7 @@ const AddToy = () => {
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                             Seller Name
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Albuquerque" name='sellerName' />
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Seller Name" name='sellerName' />
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
@@ -100,7 +107,7 @@ const AddToy = () => {
                                 <option>RC Aircraft</option>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                             </div>
                         </div>
                     </div>
@@ -108,7 +115,7 @@ const AddToy = () => {
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                             Quantity
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="90210" name='quantity' />
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="Quantity" name='quantity' />
                     </div>
                     <div class="w-full mt-5 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
@@ -131,7 +138,7 @@ const AddToy = () => {
                         type="submit"
                         class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
                     >
-                        Send Enquiry
+                        Add Toy
                     </button>
                 </div>
             </form>

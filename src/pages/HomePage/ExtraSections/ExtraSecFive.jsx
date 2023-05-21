@@ -6,8 +6,10 @@ const ExtraSecFive = () => {
 
 
             <section
-                class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1682687218608-5e2522b04673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80)] bg-cover bg-top bg-no-repeat "
-            >
+                class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1682687218608-5e2522b04673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80)] bg-cover bg-top bg-no-repeat  "
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom" data-aos-easing="linear"
+                data-aos-duration="1500" >
                 <div class="bg-black/60 p-8 md:p-12 lg:px-16 lg:py-24">
                     <div class="text-center ltr:sm:text-left rtl:sm:text-right py-16">
                         <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl ">

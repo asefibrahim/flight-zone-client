@@ -13,11 +13,12 @@ const UpdateModal = ({ product, products, setProducts, }) => {
         const price = form.price.value
         const quantity = form.quantity.value
         const description = form.description.value
+        console.log(description);
         const updateInfo = {
             toyName, price, quantity, description
         }
         console.log(updateInfo);
-        fetch(` https://rc-flight-zone-server.vercel.app/addedToys/${_id}`, {
+        fetch(`https://rc-flight-zone-server.vercel.app/addedToys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -30,7 +31,7 @@ const UpdateModal = ({ product, products, setProducts, }) => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Updated Successfully',
+                        text: 'Toy information Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -42,6 +43,7 @@ const UpdateModal = ({ product, products, setProducts, }) => {
                     updatedOne.price = price
                     updatedOne.quantity = quantity
                     updatedOne.description = description
+
                     const setUpdatedData = [...remaining, updatedOne]
                     setProducts(setUpdatedData)
                 }
@@ -71,7 +73,7 @@ const UpdateModal = ({ product, products, setProducts, }) => {
                             placeholder="Enter Update Product name"
                             type="text"
 
-
+                            defaultValue={toyName}
                             name='name'
                         />
                     </div>
@@ -82,9 +84,9 @@ const UpdateModal = ({ product, products, setProducts, }) => {
                             <input
                                 class="w-full rounded-lg border-gray-200 p-3 text-sm"
                                 placeholder="Enter Update Price"
-                                type="text"
+                                type="number"
                                 name='price'
-
+                                defaultValue={price}
 
                             />
                         </div>
@@ -94,67 +96,14 @@ const UpdateModal = ({ product, products, setProducts, }) => {
                             <input
                                 class="w-full rounded-lg border-gray-200 p-3 text-sm"
                                 placeholder="Enter Update Quantity"
-                                type='text'
+                                type='number'
                                 name='quantity'
+                                defaultValue={quantity}
                             />
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-                        <div>
-                            <input
-                                class="peer sr-only"
-                                id="option1"
-                                type="radio"
-                                tabindex="-1"
-                                name="option"
-                            />
 
-                            <label
-                                for="option1"
-                                class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
-                                tabindex="0"
-                            >
-                                <span class="text-sm font-medium"> Option 1 </span>
-                            </label>
-                        </div>
-
-                        <div>
-                            <input
-                                class="peer sr-only"
-                                id="option2"
-                                type="radio"
-                                tabindex="-1"
-                                name="option"
-                            />
-
-                            <label
-                                for="option2"
-                                class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
-                                tabindex="0"
-                            >
-                                <span class="text-sm font-medium"> Option 2 </span>
-                            </label>
-                        </div>
-
-                        <div>
-                            <input
-                                class="peer sr-only"
-                                id="option3"
-                                type="radio"
-                                tabindex="-1"
-                                name="option"
-                            />
-
-                            <label
-                                for="option3"
-                                class="block w-full rounded-lg border border-gray-200 p-3 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
-                                tabindex="0"
-                            >
-                                <span class="text-sm font-medium"> Option 3 </span>
-                            </label>
-                        </div>
-                    </div>
 
                     <div>
                         <label for="message">Description</label>
@@ -165,6 +114,7 @@ const UpdateModal = ({ product, products, setProducts, }) => {
                             rows="8"
                             id="message"
                             name='description'
+
                         ></input>
                     </div>
 
@@ -173,12 +123,12 @@ const UpdateModal = ({ product, products, setProducts, }) => {
 
                             class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
                         >
-                            Send Enquiry
+                            Update
                         </button>
                     </div>
                 </form>
                 <div className="modal-action">
-                    <a href="#" className="btn">Yay!</a>
+                    <a href="#" className="btn">Cancel</a>
                 </div>
 
             </div>

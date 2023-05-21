@@ -29,20 +29,22 @@ const TabSection = () => {
 
             <Tabs>
                 <TabList className='text-center'>
-                    <Tab  ><span className='font-bold'>Rc Helicopter</span></Tab>
-                    <Tab ><span className='font-bold'>Rc Drone</span></Tab>
-                    <Tab ><span className='font-bold'>Rc Aircraft</span></Tab>
+                    <Tab  ><span className='font-bold text-stone-700'>Rc Helicopter</span></Tab>
+                    <Tab ><span className='font-bold text-stone-700'>Rc Drone</span></Tab>
+                    <Tab ><span className='font-bold text-stone-700'>Rc Aircraft</span></Tab>
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-20'>
+                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-20' data-aos="fade-up" data-aos-easing="linear"
+                        data-aos-duration="1000" >
                         {
                             helicopters.map(helicopter => <Helicopter helicopter={helicopter}></Helicopter>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-12 '>
+                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-12 ' data-aos="fade-up" data-aos-easing="linear"
+                        data-aos-duration="1000">
                         {
                             drones.map(drone => <Drone drone={drone}></Drone>)
                         }
@@ -50,7 +52,8 @@ const TabSection = () => {
 
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-12'>
+                    <div className='grid md:grid-cols-3 px-4 gap-3 mt-12' data-aos="fade-up" data-aos-easing="linear"
+                        data-aos-duration="1000">
                         {
                             planes.map(plane => <Plane plane={plane}></Plane>)
                         }
